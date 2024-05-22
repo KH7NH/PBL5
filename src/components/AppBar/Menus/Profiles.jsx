@@ -32,7 +32,7 @@ function Profiles() {
         >
           <Avatar sx={{ width: 34, height: 34 }}
             alt='HDK'
-            src='https://scontent.fdad3-6.fna.fbcdn.net/v/t39.30808-6/277732021_1478837625864187_5356308250228878077_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHPL6sY2tk6zg9Av4FXvX-MwOP0JX0W-ZrA4_QlfRb5mmmEVeiz_5R7fWyc_vmy4W7dAlezvw0zpzJROI_Uiy4l&_nc_ohc=_OEhPXiyja4Q7kNvgF2jbhI&_nc_oc=Adh8YGMdf-ejFYZhdndFdQbtfWd2xlDjekUkJUGK0HN8-kKt3JVrzidWBBTsE6FIFR52fyy6PhQUG0oLB7sCTC5G&_nc_ht=scontent.fdad3-6.fna&oh=00_AYA9sIIxdA8V84-jLF6nDbxgbKLh2LSTM3avc2G8ut7hRg&oe=6647B717'
+            src='https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/339982457_6419345908075781_6660989879778997634_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFsbe3JEvC623PwisOpL-uKFUllZmTjAlQVSWVmZOMCVIRhqassveM0R8Jqe0IiZg2Mht-ZiTw5IEIYut4JRIoc&_nc_ohc=3IMDRrSvFDIQ7kNvgEzdvEA&_nc_ht=scontent.fhan14-1.fna&oh=00_AYBXvvoB154ytG8SYOu21aFMspsZbq-BiHGGRGCrDE3ZpA&oe=6650DF77'
           />
         </IconButton>
       </Tooltip>
