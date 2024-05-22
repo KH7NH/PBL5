@@ -15,16 +15,16 @@ export const fetchBoardDetailsAPI = async (boardId) => {
   // axios trả kết quả về qua property của nó là data
   return response.data
 }
-// /** Columns */
-// export const createNewColumnAPI = async (boardId) => {
-//   const response = await axios.post(`${API_ROOT}/v1/columns`, newColumnData)
-//   // axios trả kết quả về qua property của nó là data
-//   return response.data
-// }
+/** Columns */
+export const createNewColumnAPI = async (newColumnData) => {
+  const response = await axios.post(`${API_ROOT}/v1/columns`, newColumnData)
+  // axios trả kết quả về qua property của nó là data
+  return response.data
+}
 
-// /** Cards */
-// export const createNewCardAPI = async (boardId) => {
-//   const response = await axios.post(`${API_ROOT}/v1/cards`, newCardData)
-//   // axios trả kết quả về qua property của nó là data
-//   return response.data
-// }
+/** Cards */
+export const createNewCardAPI = async (newCardData) => {
+  const response = await axios.post(`${API_ROOT}/v1/cards`, newCardData)
+  // axios trả kết quả về qua property của nó là data
+  return response.data
+}
