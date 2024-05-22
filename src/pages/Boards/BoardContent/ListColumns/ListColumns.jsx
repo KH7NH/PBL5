@@ -7,18 +7,27 @@ import { SortableContext, horizontalListSortingStrategy } from '@dnd-kit/sortabl
 import { useState } from 'react'
 import TextField from '@mui/material/TextField'
 import CloseIcon from '@mui/icons-material/Close'
-function ListColumns({ columns }) {
+function ListColumns({ columns, createNewColumn, createNewCard }) {
   const [openNewColumnForm, setOpenNewColumnForm] = useState(false)
   const toggleOpenNewColumnForm = () => setOpenNewColumnForm(!openNewColumnForm)
 
   const [newColumnTitle, setNewColumnTitle] = useState('')
-  const addNewColumn = () => {
+  const addNewColumn = async () => {
     if (!newColumnTitle) {
       toast.error('Please enter colomn title')
       return
     }
-    // console.log(newColumnTitle)
-    // Gọi API
+    // Tạo dữ liệu Column để gọi API
+    const newColumnData = {
+      title: newColumnTitle
+    }
+    /**
+     * Gọi lên props function createNewColumn nằm ở component cha cao nhất (boards/_id.jsx)
+     * Lưu ý: Về sau ở học phần MERN Stack Advance nâng cao học trực tiếp mình sẽ với mình thì chúng ta sẽ đưa dữ liệu Board ra ngoài Redux Global Store,
+     * Thì lúc này chúng ta có thể gọi luôn API ở đây là xong thay vì phải lần lượt gọi ngược lên những component cha phía bên trên. (Đối với component con nằm càng sâu thì càng khổ :D)
+     * - Với việc sử dụng Redux như vậy thì code sẽ Clean chuẩn chỉnh hơn rất nhiều.
+     */
+    await createNewColumn(newColumnData)
     // Đóng trạng thái thêm Column mới và Clear Input
     toggleOpenNewColumnForm()
     setNewColumnTitle('')
@@ -33,7 +42,7 @@ function ListColumns({ columns }) {
         overflowX: 'auto',
         overflowY: 'hidden'
       }}>
-        {columns?.map(column => <Column key={column._id} column={column} />)}
+        {columns?.map(column => <Column key={column._id} column={column} createNewCard={createNewCard} />)}
         {!openNewColumnForm
           ? <Box onClick={toggleOpenNewColumnForm} sx={{
             minWidth: '250px',
@@ -105,7 +114,7 @@ function ListColumns({ columns }) {
             </Box>
           </Box>
         }
-        
+
       </Box>
     </SortableContext>
   )
